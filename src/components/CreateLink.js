@@ -8,7 +8,7 @@ class CreateLink extends Component {
     url: ''
   }
 
-  render () {
+  render() {
     return (
       <div>
         <div className='flex flex-column mt3'>
@@ -45,21 +45,23 @@ class CreateLink extends Component {
       }
     })
   }
+
 }
 
+// 1
 const CREATE_LINK_MUTATION = gql`
-  #2
-  mutation CreateLinkMutation($description: String!, $url: String!) {
-    createLink(
-      description: $description,
-      url: $url,
-    ) {
-      id
-      createdAt
-      url
-      description
-    }
+# 2
+mutation CreateLinkMutation($description: String!, $url: String!) {
+  createLink(
+    description: $description,
+    url: $url,
+  ) {
+    id
+    url
+    description
   }
+}
 `
 
+// 3
 export default graphql(CREATE_LINK_MUTATION, { name: 'createLinkMutation' })(CreateLink)
