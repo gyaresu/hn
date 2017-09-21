@@ -1,8 +1,9 @@
 # project: cj7s5cj3l068o0143z1tvzvke
-# version: 2
+# version: 4
 
 type Link implements Node {
   id: ID! @isUnique
+  createdAt: DateTime!
   url: String!
   description: String!
 }

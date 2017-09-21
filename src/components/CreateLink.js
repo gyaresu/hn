@@ -57,6 +57,7 @@ mutation CreateLinkMutation($description: String!, $url: String!) {
     url: $url,
   ) {
     id
+    createdAt
     url
     description
   }
