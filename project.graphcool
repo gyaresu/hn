@@ -1,11 +1,23 @@
 # project: cj7s5cj3l068o0143z1tvzvke
-# version: 4
+# version: 6
 
 type Link implements Node {
-  id: ID! @isUnique
   createdAt: DateTime!
-  url: String!
   description: String!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+  url: String!
+  postedBy: User @relation(name: "UsersLinks")
+}
+
+type User implements Node {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  email: String @isUnique
+  updatedAt: DateTime!
+  name: String!
+  password: String
+  links: [Link!]! @relation(name: "UsersLinks")
 }
 
 type File implements Node {
@@ -17,10 +29,4 @@ type File implements Node {
   size: Int!
   updatedAt: DateTime!
   url: String! @isUnique
-}
-
-type User implements Node {
-  createdAt: DateTime!
-  id: ID! @isUnique
-  updatedAt: DateTime!
 }

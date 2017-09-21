@@ -44,11 +44,12 @@ class CreateLink extends Component {
         url
       }
     })
+    this.props.history.push(`/`)
   }
-
+  
 }
 
-// 1
+// 1w
 const CREATE_LINK_MUTATION = gql`
 # 2
 mutation CreateLinkMutation($description: String!, $url: String!) {
